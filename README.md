@@ -1,4 +1,4 @@
-# libqa™ Project  
+# libqa™ Greadle + SpringBoot + Handlebsars + MySql Project  
 Keyword based Social Q&A Community  (http://www.libqa.com)
 
 ### Social Q&A & Knowledge sharing platform based GLiDER Wiki. created by GLiDER Wiki Team(http://www.gliderwiki.org)

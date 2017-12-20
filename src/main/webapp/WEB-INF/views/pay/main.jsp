@@ -2,7 +2,6 @@
 
 {{# partial "content" }}
 
-<div id='calendar'></div>
 
 {{/partial}}
 
