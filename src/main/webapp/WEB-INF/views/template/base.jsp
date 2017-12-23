@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/index">Home</a>
+        <a class="navbar-brand" href="/html/index">Home</a>
     </div>
 
     <nav role="navigation" class="navbar-collapse bs-navbar-collapse collapse">
