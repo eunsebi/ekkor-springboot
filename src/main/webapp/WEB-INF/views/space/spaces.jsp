@@ -1,4 +1,4 @@
-{{#partial "title"}}Alpaka~{{/partial}}
+{{#partial "title"}}ekkor~{{/partial}}
 
 {{# partial "content" }}
     <div class="container-fluid">

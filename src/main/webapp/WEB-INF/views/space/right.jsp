@@ -16,7 +16,7 @@ To change this template use File | Settings | File Templates.
     <script src="/resource/public/js/jquery/jquery-ui-latest.js"></script>
 {{/partial}}
 
-{{#partial "title"}}Alpaka~{{/partial}}
+{{#partial "title"}}ekkor~{{/partial}}
 
 {{# partial "content" }}
 <!-- contents -->

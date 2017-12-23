@@ -6,9 +6,9 @@
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Social Q&A Alpaka™">
-    <meta property="og:image" content="http://www.Alpaka.com/resource/images/symbol-dashboard.png">
-    <meta property="og:description" content="Alpaka 는 글라이더 오픈소스팀이 만든 소셜 기반의 Q&A 지식공유 Wiki 플랫폼입니다.">
+    <meta property="og:title" content="Social Q&A ekkor™">
+    <meta property="og:image" content="http://www.ekkor.com/resource/images/symbol-dashboard.png">
+    <meta property="og:description" content="ekkor 는 글라이더 오픈소스팀이 만든 소셜 기반의 Q&A 지식공유 Wiki 플랫폼입니다.">
 
     <title>{{#block "title"}}{{/block}}</title>
 

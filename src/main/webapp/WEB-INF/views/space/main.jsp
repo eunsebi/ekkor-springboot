@@ -8,7 +8,7 @@
     <script type='text/javascript' src="/resource/public/js/bootstrap-tag-cloud/bootstrap-tag-cloud.js"></script>
 {{/partial}}
 
-{{#partial "title"}}Alpaka~{{/partial}}
+{{#partial "title"}}ekkor~{{/partial}}
 
 {{# partial "content" }}
 <!-- contents -->
@@ -18,9 +18,15 @@
         {{> search/form/space}}
 
         <div class="btn-group pull-right">
-            <a href="/space/spaces" class="btn btn-primary" id="spaceCount"></a>
-            <a href="/space/keywords" class="btn btn-primary" id="keywordCount"></a>
+	    <!-- <a href="/space/spaces" class="btn btn-primary" id="spaceCount"></a>
+            <a href="/space/keywords" class="btn btn-primary" id="keywordCount"></a> -->
+            <a href="#" class="btn btn-primary" id="spaceCount"></a>
+            <a href="#" class="btn btn-primary" id="keywordCount"></a>
+            {{#if userRole}}
+            {{#compareTo userRole 'ADMIN'}}
             <a href="/space/form" class="btn btn-primary">공간 생성하기</a>
+            {{/compareTo}}
+            {{/if}}
         </div>
 
     </div>

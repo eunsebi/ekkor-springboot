@@ -139,7 +139,7 @@
         </div>
         <div class="col-md-12 text-center">
             <p class="">
-                Copyright © 2016 Alpaka™
+                Copyright © 2016 ekkor™
             </p>
         </div>
     </div>
@@ -159,9 +159,6 @@
                 submitLogin();
             }
         });
-
-        // carendar
-
     });
 
     function test1(){

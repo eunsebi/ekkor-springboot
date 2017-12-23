@@ -20,7 +20,7 @@
     <script type='text/javascript' src="/resource/public/js/bootstrap-tag-cloud/bootstrap-tag-cloud.js"></script>
 {{/partial}}
 
-{{#partial "title"}}Alpaka~{{/partial}}
+{{#partial "title"}}ekkor~{{/partial}}
 
 {{# partial "content" }}
 <div class="container-fluid">

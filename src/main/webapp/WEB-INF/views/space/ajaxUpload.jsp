@@ -13,7 +13,7 @@ To change this template use File | Settings | File Templates.
     {{!-- 여기에 .css 파일 경로 --}}
 {{/partial}}
 
-{{#partial "title"}}Alpaka~{{/partial}}
+{{#partial "title"}}ekkor~{{/partial}}
 
 {{# partial "content" }}
 

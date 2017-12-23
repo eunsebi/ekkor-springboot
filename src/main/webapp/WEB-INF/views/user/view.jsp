@@ -18,7 +18,7 @@ To change this template use File | Settings | File Templates.
 
 {{/partial}}
 
-{{#partial "title"}}Alpaka~{{/partial}}
+{{#partial "title"}}ekkor~{{/partial}}
 
 {{# partial "content" }}
     <!-- contents -->

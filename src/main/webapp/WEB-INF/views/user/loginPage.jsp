@@ -13,7 +13,7 @@ Time: 16:20
     <script type='text/javascript' src="/resource/public/js/bootstrap-tag-cloud/bootstrap-tag-cloud.js"></script>
 {{/partial}}
 
-{{#partial "title"}}Alpaka~{{/partial}}
+{{#partial "title"}}ekkor~{{/partial}}
 
 {{# partial "content" }}
 
@@ -78,6 +78,7 @@ Time: 16:20
 {{/partial}}
 {{# partial "script-page" }}
 <script type="text/javascript">
+
     $(document).ready(function () {
         $("#loginFormBtn").click(function() {
             submitLogin();
