@@ -49,7 +49,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity webSecurity) throws Exception {
-        webSecurity.ignoring().antMatchers("/", "/resource/**");
+        webSecurity.ignoring().antMatchers("/html/", "/html/resource/**");
     }
 
     @Override

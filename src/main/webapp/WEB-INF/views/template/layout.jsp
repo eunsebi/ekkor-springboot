@@ -14,16 +14,16 @@
 
     {{!-- favicon
     <link rel="shortcut icon" href="/resource/images/favicon.ico" type="image/x-icon">
-     --}}
+    --}}
 
     {{!--공통 스타일 영역--}}
-    <link href="/resource/public/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/resource/public/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/resource/public/bootstrap-theme/bootswatch/cerulean/bootstrap.min.css" rel="stylesheet" />
-    <link href="/resource/app/css/common.css" rel="stylesheet" />
-    <link href="/resource/public/css/login.css" rel="stylesheet" />
+    <link href="/html/resource/public/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/html/resource/public/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/html/resource/public/bootstrap-theme/bootswatch/cerulean/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/html/resource/app/css/common.css" rel="stylesheet"/>
+    <link href="/html/resource/public/css/login.css" rel="stylesheet"/>
     <!-- 모달 -->
-    <link href="/resource/public/css/jquery-confirm.min.css" type="text/css" rel="stylesheet" />
+    <link href="/html/resource/public/css/jquery-confirm.min.css" type="text/css" rel="stylesheet"/>
 
     <!-- page specific plugin styles -->
     {{#block "plugin-style"}}{{/block}}
@@ -32,12 +32,12 @@
     {{#block "style"}}{{/block}}
 
     {{!--공통 스크립트 영역--}}
-    <script src="/resource/public/js/jquery/jquery-1.11.2.min.js"></script>
-    <script src="/resource/public/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-    <script src="/resource/public/js/jquery/jquery-confirm.min.js"></script>
-    <script src="/resource/public/js/handlebars.min.js"></script>
-    <script src="/resource/app/js/helpers/helper.js"></script>
-    <script src="/resource/app/js/google/analytics.js"></script>
+    <script src="/html/resource/public/js/jquery/jquery-1.11.2.min.js"></script>
+    <script src="/html/resource/public/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script src="/html/resource/public/js/jquery/jquery-confirm.min.js"></script>
+    <script src="/html/resource/public/js/handlebars.min.js"></script>
+    <script src="/html/resource/app/js/helpers/helper.js"></script>
+    <script src="/html/resource/app/js/google/analytics.js"></script>
 
     <!--<script src="http://getbootstrap.com/assets/js/docs.min.js"></script>-->
     <!--[if lt IE 9]>
@@ -63,12 +63,12 @@
 
 {{#block "script-page"}}{{/block}}
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("*").click(function(){
-            if( $(this).data("linktype") == "search" ){
-                $("input").each(function(){
-                    if( $(this).data("linkval") == "searchText" ){
-                        location.href = "/wiki/search?text="+$(this).val();
+    $(document).ready(function () {
+        $("*").click(function () {
+            if ($(this).data("linktype") == "search") {
+                $("input").each(function () {
+                    if ($(this).data("linkval") == "searchText") {
+                        location.href = "/html/wiki/search?text=" + $(this).val();
                     }
                 });
             }

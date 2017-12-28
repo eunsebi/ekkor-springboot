@@ -69,8 +69,8 @@ public class IndexCrawler {
         }
 
         Wiki wiki = wikies.stream().findFirst().get();
-        String viewUrl = String.format("/wiki/%s", wiki.getWikiId());
-        String moreUrl = String.format("/space/%s", spaceIdForNotice);
+        String viewUrl = String.format("/html/wiki/%s", wiki.getWikiId());
+        String moreUrl = String.format("/html/space/%s", spaceIdForNotice);
 
         IndexNotice indexNotice = IndexNotice.of();
         indexNotice.setViewUrl(viewUrl);
