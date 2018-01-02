@@ -1,6 +1,6 @@
 
 <li>
-    <a href="/html/user/signUp"><i class="fa fa-fw fa-user-plus"></i> Sign Up</a>
+    <a href="/user/signUp"><i class="fa fa-fw fa-user-plus"></i> Sign Up</a>
 </li>
 <li class="divider"></li>
 

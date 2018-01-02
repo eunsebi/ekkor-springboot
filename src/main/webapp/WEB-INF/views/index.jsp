@@ -48,11 +48,11 @@
                             <div class="media">
                                 <div class="pull-left">
                                     <div class="user-profile">
-                                        <img alt="avatar" class="profile-image" src="/html/imageView?path={{userImage}}" onerror='this.src="/html/resource/images/avatar.png"' />
+                                        <img alt="avatar" class="profile-image" src="/imageView?path={{userImage}}" onerror='this.src="/resource/images/avatar.png"' />
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <a href="/html/qa/{{qaId}}">{{{abbreviate (htmlDelete contents) 200}}}</a>
+                                    <a href="/qa/{{qaId}}">{{{abbreviate (htmlDelete contents) 200}}}</a>
                                     <span class="comments"><i class="glyphicon glyphicon-comment"></i> {{countOfReply}}</span>
                                 </div>
                                 <div class="pull-left"><span class="nickname">{{userNick}}</span></div>
@@ -68,7 +68,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading"><strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
                         <div class="panel-body">
-                            <a href="/html/space/{{spaceId}}">{{{abbreviate (htmlDelete description) 70}}}</a>
+                            <a href="/space/{{spaceId}}">{{{abbreviate (htmlDelete description) 70}}}</a>
                         </div>
                     </div>
                     {{/each}}
@@ -79,7 +79,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading"><strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
                             <div class="panel-body">
-                                <a href="/html/wiki/{{wikiId}}">{{{ abbreviate (htmlDelete description) 70}}}</a>
+                                <a href="/wiki/{{wikiId}}">{{{ abbreviate (htmlDelete description) 70}}}</a>
                             </div>
                         </div>
                     {{/each}}
@@ -94,11 +94,11 @@
                         <div class="media">
                             <div class="pull-left">
                                 <div class="user-profile">
-                                    <img alt="avatar" class="profile-image" src="/html/imageView?path={{userImage}}" onerror='this.src="/html/resource/images/avatar.png"'  />
+                                    <img alt="avatar" class="profile-image" src="/imageView?path={{userImage}}" onerror='this.src="/resource/images/avatar.png"'  />
                                 </div>
                             </div>
                             <div class="media-body">
-                                <a href="/html/feed/{{feedThreadId}}">{{{abbreviate (htmlDelete feedContent) 40}}}</a>
+                                <a href="/feed/{{feedThreadId}}">{{{abbreviate (htmlDelete feedContent) 40}}}</a>
                                 <span class="comments pull-right"><i class="glyphicon glyphicon-comment"></i> {{countOfReply}}</span>
                             </div>
                             <div class="pull-left"><span class="nickname">{{userNick}}</span></div>

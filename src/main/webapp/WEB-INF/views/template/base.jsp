@@ -7,24 +7,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/html/index">Home</a>
+        <a class="navbar-brand" href="/index">Home</a>
     </div>
 
     <nav role="navigation" class="navbar-collapse bs-navbar-collapse collapse">
         <ul class="nav navbar-nav navi-menu">
-            <li><a href="/html/feed">Feeds</a></li>
-            <li><a href="/html/qa/main">Q&amp;A</a></li>
-            <li><a href="/html/space/main">Space</a></li>
-            <li><a href="/html/wiki/main">Wiki</a></li>
+            <li><a href="/feed">Feeds</a></li>
+            <li><a href="/qa/main">Q&amp;A</a></li>
+            <li><a href="/space/main">Space</a></li>
+            <li><a href="/wiki/main">Wiki</a></li>
             {{#if isLogin}}
                 <li class="dropdown">
                     <a href="#" id="dropdownMenu1" class="dropdown-toggle" data-toggle="dropdown">My List</a>
                     <ul class="dropdown-menu text-left">
                         <li style="width: 100%;text-align:left">
-                            <a href="/html/my/feed">내 Feed 목록</a>
+                            <a href="/my/feed">내 Feed 목록</a>
                         </li>
                         <li style="width: 100%;text-align:left">
-                            <a href="/html/my/qa">내 QA 목록</a>
+                            <a href="/my/qa">내 QA 목록</a>
                         </li>
                     </ul>
                 </li>
@@ -32,7 +32,7 @@
             {{#if userRole}}
                 {{#compareTo userRole 'ADMIN'}}
                     <li>
-                        <a href="/html/admin">Admin</a>
+                        <a href="/admin">Admin</a>
                     </li>
                 {{/compareTo}}
             {{/if}}
@@ -187,7 +187,7 @@
         }
 
         var data = $("#loginForm").serialize();
-        $.post('/html/user/login/authenticate', data).done(function(response){
+        $.post('/user/login/authenticate', data).done(function(response){
             var result = jQuery.parseJSON(response);
 
             console.log("@ result = " + result);

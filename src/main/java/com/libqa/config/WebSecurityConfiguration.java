@@ -49,7 +49,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity webSecurity) throws Exception {
-        webSecurity.ignoring().antMatchers("/html/", "/html/resource/**");
+        webSecurity.ignoring().antMatchers("/", "/resource/**");
     }
 
     @Override
@@ -60,22 +60,22 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anonymous()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/html/index", "/html/user/**", "/html/space", "/html/space/**", "/html/feed/**",
-                        "/html/qa", "/html/qa/**", "/html/qa/save", "/html/wiki/**", "/html/common/**").permitAll()
-                .antMatchers("/html/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/index", "/user/**", "/space", "/space/**", "/feed/**",
+                        "/qa", "/qa/**", "/hqa/save", "/wiki/**", "/common/**").permitAll()
+                .antMatchers("/admin/**").hasAuthority("ADMIN")
                 .and()
                 .formLogin()
-                .loginPage("/html/loginPage").usernameParameter("userEmail").passwordParameter("userPass")
-                .loginProcessingUrl("/html/user/login/authenticate").permitAll()
+                .loginPage("/loginPage").usernameParameter("userEmail").passwordParameter("userPass")
+                .loginProcessingUrl("/user/login/authenticate").permitAll()
                 .successHandler(loginSuccessHandler())
                 .failureHandler(new CustomLoginFailureHandler())
-                .failureUrl("/html/login?error")
+                .failureUrl("/login?error")
                 .and()
                 .rememberMe().key(REMEMBER_ME_KEY).rememberMeServices(tokenBasedRememberMeServices())
                 .and()
-                .logout().deleteCookies("remember-me").logoutUrl("/html/logoutUser").logoutSuccessUrl("/")
+                .logout().deleteCookies("remember-me").logoutUrl("/logoutUser").logoutSuccessUrl("/")
                 .and()
-                .exceptionHandling().accessDeniedPage("/html/access?error");
+                .exceptionHandling().accessDeniedPage("/access?error");
 
         //.logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
 
