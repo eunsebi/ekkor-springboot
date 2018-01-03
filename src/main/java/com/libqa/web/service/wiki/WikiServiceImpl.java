@@ -392,7 +392,7 @@ public class WikiServiceImpl implements WikiService {
     @Override
     public List<Wiki> findBySpaceIdAndSort(Integer spaceId) {
 
-        List<Wiki> trees = wikiRepository.findAllBySpaceIdAndIsDeleted(spaceId, isDeleted, PageUtil.sort(PageUtil.order("ASC", "groupIdx"), PageUtil.order("ASC", "orderIdx")));
+        List<Wiki> trees = wikiRepository.findAllBySpaceIdAndIsDeleted(spaceId, isDeleted, PageUtil.sort(PageUtil.order("DESC", "groupIdx"), PageUtil.order("DESC", "orderIdx")));
         return trees;
     }
 
