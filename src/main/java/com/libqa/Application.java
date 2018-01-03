@@ -44,7 +44,7 @@ public class Application extends SpringBootServletInitializer {
         return characterEncodingFilter;
     }
 
-    @Bean
+    /*@Bean
     public ErrorPageFilter errorPageFilter() {
         return new ErrorPageFilter();
     }
@@ -55,5 +55,5 @@ public class Application extends SpringBootServletInitializer {
         filterRegistrationBean.setFilter(filter);
         filterRegistrationBean.setEnabled(false);
         return filterRegistrationBean;
-    }
+    }*/
 }
