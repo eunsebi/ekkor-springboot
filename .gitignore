@@ -24,8 +24,12 @@ bin/
 tmp/
 gradle/
 out/
+classes/
 
 #libqa
 webapp/resource/temp/
 src/main/webapp/resource/profile/
 src/main/webapp/resource/temp/
+classes/artifacts/html_exploded/WEB-INF/classes/META-INF/
+classes/artifacts/html_exploded/WEB-INF/classes/com/
+src/main/resources/META-INF/

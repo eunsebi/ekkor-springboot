@@ -60,7 +60,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anonymous()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/index", "/user/**", "/space", "/space/**", "/feed/**",
+                .antMatchers("/", "/index", "/user/**", "/space", "/space/**", "/feed/**",
                         "/qa", "/qa/**", "/hqa/save", "/wiki/**", "/common/**").permitAll()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
                 .and()
