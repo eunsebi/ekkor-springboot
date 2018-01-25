@@ -1,113 +1,58 @@
 {{# partial "title" }}Pay{{/partial}}
 
 {{# partial "content" }}
+<div class="container">
+    <form id="payLoginForm" name="loginForm" method="post" class="form-horizontal">
+        <div class="row" style="height: 40px">
+            <div class="col-xs-4 text-left">
+                <span style="color: #428bca;"><a href="#">Forgot password?</a></span>
+            </div>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control" name="email" id="email" placeholder="email address" value="eunsebi@me.com">
+        </div>
+        <span class="help-block"></span>
 
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input type="password" class="form-control" name="passwd" id="passwd" placeholder="Password" value="1234">
+        </div>
+
+        <span class="help-block" style="color: red; display: none" id="loginInfo">로그인 정보가 올바르지 않습니다. 아이디/비밀번호를 확인하세요.</span>
+
+        <div style="padding-top:10px;border-top: 1px solid #e5e5e5">
+            <div class="col-xs-4">
+                <label class="checkbox">
+                    <input type="checkbox" id="remember-me" name="remember-me" value="Y">Save ID
+                </label>
+            </div>
+            <div class="col-xs-4" >
+                <button type="button" class="btn btn-primary" id="payLoginBtn">Log in</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+
+    </form>
+</div>
 
 {{/partial}}
 
 {{# partial "style" }}
-<link rel="stylesheet" href="/resource/public/ekko-lightbox/ekko-lightbox.min.css">
-<link rel="stylesheet" href="/resource/public/ekko-lightbox/dark-theme.css">
-
-<!-- Calendar stylesheet start -->
-<link href='/resource/public/calendar/css/fullcalendar.css' rel='stylesheet' />
-
-<style type='text/css'>
-
-    body {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 14px;
-        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-    }
-
-    #calendar {
-        width: 900px;
-        margin: 0 auto;
-    }
-
-</style>
-<!-- Calendar stylesheet end -->
 
 {{/partial}}
 
 {{# partial "script-page" }}
 <script src="/resource/public/ekko-lightbox/ekko-lightbox.min.js"></script>
 <script type="text/javascript" src="/resource/app/js/feed/app.js"></script>
+<script type="text/javascript" src="/resource/app/js/pay/pay.js"></script>
 <script type="text/javascript">
     $(function(){
         Feed.init();
         FeedPager.init(FeedList.getSize(), Feed.moreList);
     });
 </script>
-
-<!-- Calendar script start -->
-<script src='/resource/public/calendar/jquery/jquery-ui-custom.js'></script>
-<script src='/resource/public/calendar/fullcalendar.min.js'></script>
-
-<script type='text/javascript'>
-
-    $(document).ready(function() {
-
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
-
-        $('#calendar').fullCalendar({
-            editable: true,
-            events: [
-                {
-                    title: 'All Day Event',
-                    start: new Date(y, m, 1)
-                },
-                {
-                    title: 'Long Event',
-                    start: new Date(y, m, d-5),
-                    end: new Date(y, m, d-2)
-                },
-                {
-                    id: 999,
-                    title: 'Repeating Event',
-                    start: new Date(y, m, d-3, 16, 0),
-                    allDay: false
-                },
-                {
-                    id: 999,
-                    title: 'Repeating Event',
-                    start: new Date(y, m, d+4, 16, 0),
-                    allDay: false
-                },
-                {
-                    title: 'Meeting',
-                    start: new Date(y, m, d, 10, 30),
-                    allDay: false
-                },
-                {
-                    title: 'Lunch',
-                    start: new Date(y, m, d, 12, 0),
-                    end: new Date(y, m, d, 14, 0),
-                    allDay: false
-                },
-                {
-                    title: 'Birthday Party',
-                    start: new Date(y, m, d+1, 19, 0),
-                    end: new Date(y, m, d+1, 22, 30),
-                    allDay: false
-                },
-                {
-                    title: 'Click for Google',
-                    start: new Date(y, m, 28),
-                    end: new Date(y, m, 29),
-                    url: 'http://google.com/'
-                }
-            ]
-        });
-
-    });
-
-</script>
-<!-- Calendar script end -->
 {{/partial}}
 
 {{> template/base}}

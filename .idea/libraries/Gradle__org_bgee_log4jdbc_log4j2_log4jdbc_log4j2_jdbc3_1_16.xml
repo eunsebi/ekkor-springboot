@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc3:1.16">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc3/1.16/679273fb468a88a11cfeeed092d9b607f3bc35a0/log4jdbc-log4j2-jdbc3-1.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc3/1.16/375ce99c74e7bae2eb4620f7a6bcb655608c3d15/log4jdbc-log4j2-jdbc3-1.16-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

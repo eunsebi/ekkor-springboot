@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jayway.restassured:spring-mock-mvc:2.4.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jayway.restassured/spring-mock-mvc/2.4.0/3ff1868bcfdeef76f49058abf8c27c6acdb4d0e2/spring-mock-mvc-2.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jayway.restassured/spring-mock-mvc/2.4.0/93c7bda7375292cfea43cb7a081bbde8c126db50/spring-mock-mvc-2.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
