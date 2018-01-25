@@ -16,7 +16,7 @@ target
 *.iml
 *.ipr
 *.iws
-.idea
+#.idea
 *.jar
 .DS_Store
 *.MF

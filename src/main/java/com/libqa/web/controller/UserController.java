@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -202,6 +203,7 @@ public class UserController {
      */
     @RequestMapping("/userAuth/{userId}/{certificationKey}")
     public ModelAndView userAuth(@PathVariable Integer userId, @PathVariable Integer certificationKey) {
+
         Assert.notNull(userId, "접근 주소가 잘못 되었습니다.");
         Assert.notNull(certificationKey, "유효하지 않은 접근입니다.");
 
