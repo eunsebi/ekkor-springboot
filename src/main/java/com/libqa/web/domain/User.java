@@ -61,6 +61,12 @@ public class User {
     @Column(length = 255, nullable = false)
     private String userPass;
 
+    @Column(length = 255, nullable = false)
+    private String passwd;
+
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private int level;
+
     @Column(nullable = false, columnDefinition = "int default 0")
     private int visitCount;
 
@@ -115,12 +121,14 @@ public class User {
         this.visitCount++;
     }
 
-    public static User createUser(String userEmail, String userNick, String password, String channelType) {
+    public static User createUser(String userEmail, String userNick, String password, String passwd, String channelType) {
         Date now = new Date();
         User user = new User();
         user.setUserEmail(userEmail);
         user.setUserNick(userNick);
         user.setUserPass(password);
+        user.setPasswd(passwd);
+        user.setLevel(1);
         user.setDeleted(false);
         user.setCertification(true); // TODO 추후 메일 연동을 통해 인증 방식으로 처리한다.
         user.setLastVisiteDate(now);

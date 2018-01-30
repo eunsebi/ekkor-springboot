@@ -10,13 +10,13 @@
         </div>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input type="text" class="form-control" name="email" id="email" placeholder="email address" value="eunsebi@me.com">
+            <input type="text" class="form-control" name="email" id="email" placeholder="email address" value="">
         </div>
         <span class="help-block"></span>
 
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-            <input type="password" class="form-control" name="passwd" id="passwd" placeholder="Password" value="1234">
+            <input type="password" class="form-control" name="passwd" id="passwd" placeholder="Password" value="">
         </div>
 
         <span class="help-block" style="color: red; display: none" id="loginInfo">로그인 정보가 올바르지 않습니다. 아이디/비밀번호를 확인하세요.</span>

@@ -78,6 +78,46 @@ public class UserController {
         return mav;
     }
 
+    /**
+     * 비밀번호 변경
+     * @param request
+     * @return
+     */
+    @RequestMapping("/user/pass")
+    public ModelAndView pass(HttpServletRequest request) {
+
+        // TODO user_keyword 가져와야 함
+        String returnUrl = RequestUtil.refererUrl(request, "/index");
+        User user = loggedUserManager.getUser();
+
+        if (user == null || user.isGuest()) {
+            log.debug("# 로그인 사용자 정보가 존재하지 않습니다.");
+            return sendAccessDenied();
+        }
+
+        User entity = userService.findByUserId(user.getUserId());
+        List<UserKeyword> userKeywordList = userKeywordService.findByUserAndIsDeleted(entity);
+
+        ModelAndView mav = new ModelAndView("/user/passForm");
+        mav.addObject("returnUrl", returnUrl);
+        mav.addObject("userEmail", user.getUserEmail());
+        mav.addObject("user", entity);
+        mav.addObject("userKeywordList", userKeywordList);
+        mav.addObject("auth", "true");
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/user/updaePasswd", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData<User> updatePasswd(@ModelAttribute User user, @RequestParam String newUserPass) throws  IllegalAccessException {
+        log.debug("### user = {}", user);
+        log.debug("### userpass = {}", newUserPass);
+        user.setUserPass(newUserPass);
+        User result = userService.updateUserPassword(user);
+        System.out.println("result : " + result);
+        return ResponseData.createSuccessResult(result);
+    }
 
     @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     @RequestMapping("/user/profile")

@@ -1,20 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Gradle : blog-1.0.war (exploded)">
-    <output-path>$PROJECT_DIR$/build/libs/exploded/blog-1.0.war</output-path>
-    <properties id="gradle-properties">
-      <options external-project-path="$PROJECT_DIR$">
-        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
-      </options>
-    </properties>
+  <artifact type="exploded-war" name="ekkor_main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ekkor_main_war_exploded</output-path>
     <root id="root">
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/blog-1.0.war/META-INF/MANIFEST.MF" />
-      </element>
-      <element id="javaee-facet-resources" facet="ekkor_main/web/Web Gradle : blog-1.0.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="ekkor_main" />
-          <element id="dir-copy" path="$PROJECT_DIR$/build/classes/main" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE" />
@@ -89,6 +79,8 @@
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-juli:8.5.11" />
         </element>
       </element>
+      <element id="library" level="project" name="javaplanner-1.5" />
+      <element id="javaee-facet-resources" facet="ekkor_main/web/Web Gradle : blog-1.0.war" />
     </root>
   </artifact>
 </component>

@@ -2,12 +2,12 @@
     <a href="/user/profile"><i class="fa fa-fw fa-user"></i> Profile</a>
 </li>
 <li>
-    <a href="/user/profile"><i class="fa fa-fw fa-unlock"></i> 비밀번호변경</a>
+    <a href="/user/pass"><i class="fa fa-fw fa-unlock"></i> 비밀번호변경</a>
 </li>
 
-<li>
+{{!-- <li>
     <a href="/user/inbox"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-</li>
+</li> --}}
 
 <li class="divider"></li>
 

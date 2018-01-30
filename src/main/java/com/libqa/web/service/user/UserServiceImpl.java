@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
         loginType = SocialChannelType.WEB.name();
         User createUser = null;
         try {
-            User user = User.createUser(userEmail, userNick, passwordEncoder.encode(password), loginType);
+            User user = User.createUser(userEmail, userNick, passwordEncoder.encode(password), password, loginType);
             createUser = userRepository.save(user);
             log.debug("### createUser = {}", createUser);
 
@@ -152,6 +152,32 @@ public class UserServiceImpl implements UserService {
         return entity;
     }
 
+    @Override
+    @Transactional
+    public User updateUserPassword(User user) {
+        User entity = null;
+
+        try {
+            entity = userRepository.findOne(user.getUserId());
+            System.out.println("==========================================================");
+            System.out.println("entity : " + entity);
+            bindPasswordUpdateInfo(user, entity);
+            entity = userRepository.save(entity);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return entity;
+    }
+
+    public void bindPasswordUpdateInfo(User user, User entity) {
+        System.out.println("------------------------------------------------------------------------------");
+        System.out.println("bind userPass : " + user.getUserPass());
+        entity.setUserPass(passwordEncoder.encode(user.getUserPass()));
+        entity.setPasswd(user.getUserPass());
+
+        entity.setUpdateDate(new Date());
+    }
 
     /**
      * 프로필 업데이트 파라미터 세팅

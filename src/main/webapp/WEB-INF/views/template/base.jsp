@@ -17,24 +17,25 @@
             <li><a href="/space/main">Space</a></li>
             <li><a href="/wiki/main">Wiki</a></li>
             {{#if isLogin}}
-                <li class="dropdown">
-                    <a href="#" id="dropdownMenu1" class="dropdown-toggle" data-toggle="dropdown">My List</a>
-                    <ul class="dropdown-menu text-left">
-                        <li style="width: 100%;text-align:left">
-                            <a href="/my/feed">내 Feed 목록</a>
-                        </li>
-                        <li style="width: 100%;text-align:left">
-                            <a href="/my/qa">내 QA 목록</a>
-                        </li>
-                    </ul>
-                </li>
+            <li class="dropdown">
+                <a href="#" id="dropdownMenu1" class="dropdown-toggle" data-toggle="dropdown">My List</a>
+                <ul class="dropdown-menu text-left">
+                    <li style="width: 100%;text-align:left">
+                        <a href="/my/feed">내 Feed 목록</a>
+                    </li>
+                    <li style="width: 100%;text-align:left">
+                        <a href="/my/qa">내 QA 목록</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="http://ekkor.ze.am/pay/home/main.do" target="_blank">Pay</a></li>
             {{/if}}
             {{#if userRole}}
-                {{#compareTo userRole 'ADMIN'}}
-                    <li>
-                        <a href="/admin">Admin</a>
-                    </li>
-                {{/compareTo}}
+            {{#compareTo userRole 'ADMIN'}}
+            <li>
+                <a href="/admin">Admin</a>
+            </li>
+            {{/compareTo}}
             {{/if}}
         </ul>
         <ul class="nav navbar-nav navbar-right navi-info pull-right">
@@ -42,9 +43,9 @@
                 <a aria-expanded="true" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x"></i></a>
                 <ul class="dropdown-menu">
                     {{#if isLogin}}
-                        {{> template/login}}
+                    {{> template/login}}
                     {{^}}
-                        {{> template/guest}}
+                    {{> template/guest}}
                     {{/if}}
                 </ul>
             </li>
@@ -152,6 +153,7 @@
     $(document).ready(function () {
         $("#loginBtn").click(function() {
             submitLogin();
+            payLogin();
         });
 
         $('#userPass').keypress(function(e) {
@@ -159,7 +161,33 @@
                 submitLogin();
             }
         });
+        $("#payLoginBtn").click(function() {
+            alert("test");
+            payLogin();
+        });
+
     });
+
+    function payLogin() {
+        userEmail = $("#userEmail").val();
+        userPass = $("#userPass").val();
+        $.ajax({
+            url : 'http://ekkor.ze.am/pay/home/payLogin.do',
+            data : {email:userEmail,passwd:userPass},
+            type : 'post',
+            success:function(response){
+                var result = JSON.parse(response);
+                /*if(result.isLogin){
+                        location.href = 'http://ekkor.ze.am/pay/home/main.do';
+                }else{
+                        alert(result.msg);
+                }*/
+            },
+            error:function(response){
+                console.log(response);
+            }
+        });
+    }
 
     function test1(){
         var div1 = $("#mainContent").children(".row").children(":first");

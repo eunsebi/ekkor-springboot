@@ -78,6 +78,13 @@ public interface UserService {
     User updateUserProfileAndKeyword(User user, Keyword keyword);
 
     /**
+     * 회원 비밀번호 변경
+     * @param user
+     * @return
+     */
+    User updateUserPassword(User user);
+
+    /**
      * 전체 회원 목록
      * @param sortType
      * @return
