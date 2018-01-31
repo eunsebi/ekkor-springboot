@@ -104,6 +104,7 @@ Time: 16:20
                                 icon: 'fa fa-info',
                                 animation: 'zoom',
                                 confirm: function () {
+                                    $(location).attr('href', "/index");
                                 }
                             });
                         }
