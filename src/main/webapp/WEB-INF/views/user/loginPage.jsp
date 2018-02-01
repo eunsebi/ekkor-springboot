@@ -42,7 +42,7 @@ Time: 16:20
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <!--<input type="text" class="form-control" name="loginUserEmail" id="loginUserEmail" placeholder="email address">-->
-                                <input type="text" class="form-control" name="loginUserEmail" id="loginUserEmail">
+                                <input type="text" class="form-control" name="loginUserEmail" id="loginUserEmail" size="30">
                             </div>
                             <span class="help-block"></span>
 
@@ -82,8 +82,9 @@ Time: 16:20
     $(document).ready(function () {
         $("#loginFormBtn").click(function() {
             submitLogin();
+            payLoginPage();
         });
-        $('#loginUserPass').keypress(function(e) {
+        $('#userPass').keypress(function(e) {
             if (e.which == 13) { // 13 == enter key ascii
                 submitLogin();
             }
@@ -107,10 +108,26 @@ Time: 16:20
             return false;
         }
 
+        //var data = $("#registForm").serialize();
+
+        /*$.post('/user/login/authenticate', data).done(function(response){
+            var result = jQuery.parseJSON(response);
+
+            console.log("@ result = " + result);
+
+            if (result.status == true) {
+                $(location).attr('href', result.returnUrl);
+            }
+        }).fail(function(response){
+            console.log("# ERROR login : " + response.status);
+
+            $("#loginPageInfo").show(0).delay(5000).hide(0);
+        });*/
+
         jQuery.ajax({
             type:'POST',
             data: { userEmail : userEmail, userPass : userPass },
-            url:'loginPage',
+            url: '/user/login/authenticate',
             success:function(response){
                 var result = jQuery.parseJSON(response);
                 console.log("## result = " + result);
@@ -124,6 +141,26 @@ Time: 16:20
                 $("#loginPageInfo").show(0).delay(5000).hide(0);
             }});
     }
+
+    function payLoginPage() {
+        $.ajax({
+            url : 'http://ekkor.ze.am/pay/home/payLogin.do',
+            data : {email:$("#loginUserEmail").val(),passwd:$("#loginUserPass").val()},
+            type : 'post',
+            success:function(response){
+                var result = JSON.parse(response);
+                /*if(result.isLogin){
+                        location.href = 'http://ekkor.ze.am/pay/home/main.do';
+                }else{
+                        alert(result.msg);
+                }*/
+            },
+            error:function(response){
+                console.log(response);
+            }
+        });
+    }
+
     /**
      * 이메일 입력 확인
      */

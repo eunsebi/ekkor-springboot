@@ -162,7 +162,6 @@
             }
         });
         $("#payLoginBtn").click(function() {
-            alert("test");
             payLogin();
         });
 
