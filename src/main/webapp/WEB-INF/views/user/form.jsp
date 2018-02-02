@@ -220,10 +220,10 @@ Time: 16:20
                 console.log('userEmail=' + userEmail);
                 console.log('userNick=' + userNick);
                 console.log('userPass=' + userPass);
-                if (!checkValidEmail(userEmail)) {
+                /*if (!checkValidEmail(userEmail)) {
                     alertEmail();
                     return false;
-                }
+                }*/
 
                 if (!checkValidName(userNick)) {
                     alertName();

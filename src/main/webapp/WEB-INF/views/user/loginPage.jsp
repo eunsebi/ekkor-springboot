@@ -98,10 +98,10 @@ Time: 16:20
     function submitLogin() {
         userEmail = $("#loginUserEmail").val();
         userPass = $("#loginUserPass").val();
-        if (!checkValidEmail(userEmail)) {
+        /*if (!checkValidEmail(userEmail)) {
             alertEmail();
             return false;
-        }
+        }*/
 
         if (!checkLength(userPass, 4)) {
             alertPass();

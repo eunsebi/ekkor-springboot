@@ -203,10 +203,10 @@
     function submitLogin() {
         userEmail = $("#userEmail").val();
         userPass = $("#userPass").val();
-        if (!checkValidEmail(userEmail)) {
+        /*if (!checkValidEmail(userEmail)) {
             alertEmail();
             return false;
-        }
+        }*/
 
         if (!checkLength(userPass, 4)) {
             alertPass();
