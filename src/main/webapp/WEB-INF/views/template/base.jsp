@@ -172,8 +172,12 @@
     });
 
     function logOut() {
-        $.get("/logoutUser");
-        $.get("/http:/ekkor.ze.am/pay/user/logout.do");
+        $.post("http://ekkor.ze.am/logoutUser",
+            function () {
+                location.href = getContextPath()+"/";
+            }
+        );
+        $.get("http://ekkor.ze.am/pay/user/logout.do");
     }
 
     function payLogin() {
