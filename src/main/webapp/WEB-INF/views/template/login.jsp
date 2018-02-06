@@ -7,10 +7,11 @@
 
 {{!-- <li>
     <a href="/user/inbox"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+    <a href="/logoutUser"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
 </li> --}}
 
 <li class="divider"></li>
 
 <li>
-    <a href="/logoutUser"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+    <a href="#" id="btnLogOut"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
 </li>

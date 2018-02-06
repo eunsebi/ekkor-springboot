@@ -165,7 +165,16 @@
             payLogin();
         });
 
+        $("#btnLogOut").click(function() {
+            logOut();
+        });
+
     });
+
+    function logOut() {
+        $.get("/logoutUser");
+        $.get("/http:/ekkor.ze.am/pay/user/logout.do");
+    }
 
     function payLogin() {
         userEmail = $("#userEmail").val();
