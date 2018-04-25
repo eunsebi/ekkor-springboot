@@ -34,7 +34,30 @@
     
             <!--center-->
             <div class="col-sm-8" style="margin-top: -10px;">
-                <div class="col-sm-12">
+                
+                <div class="col-sm-6" >
+                    <h3 class="page-header"><i class="fa fa-database"></i> Space</h3>
+                    {{#each spaces}}
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
+                        <div class="panel-body">
+                            <a href="/space/{{spaceId}}">{{{abbreviate (htmlDelete description) 70}}}</a>
+                        </div>
+                    </div>
+                    {{/each}}
+               </div>
+               <div class="col-sm-6">
+                    <h3 class="page-header"><i class="glyphicon glyphicon-book"></i> Wiki</h3>
+                    {{#each wikies}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
+                            <div class="panel-body">
+                                <a href="/wiki/{{wikiId}}">{{{ abbreviate (htmlDelete description) 70}}}</a>
+                            </div>
+                        </div>
+                    {{/each}}
+               </div>
+               <div class="col-sm-12">
                     <div class="index-thread-box first">
                         <h3 class="page-header"><i class="glyphicon glyphicon-question-sign"></i> Q&amp;A</h3>
                         {{#each qaContents}}
@@ -61,28 +84,6 @@
                         </div>
                         {{/each}}
                     </div>
-                </div>
-                <div class="col-sm-6" >
-                    <h3 class="page-header"><i class="fa fa-database"></i> Space</h3>
-                    {{#each spaces}}
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
-                        <div class="panel-body">
-                            <a href="/space/{{spaceId}}">{{{abbreviate (htmlDelete description) 70}}}</a>
-                        </div>
-                    </div>
-                    {{/each}}
-               </div>
-                <div class="col-sm-6">
-                    <h3 class="page-header"><i class="glyphicon glyphicon-book"></i> Wiki</h3>
-                    {{#each wikies}}
-                        <div class="panel panel-default">
-                            <div class="panel-heading"><strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
-                            <div class="panel-body">
-                                <a href="/wiki/{{wikiId}}">{{{ abbreviate (htmlDelete description) 70}}}</a>
-                            </div>
-                        </div>
-                    {{/each}}
                 </div>
             </div>
 
