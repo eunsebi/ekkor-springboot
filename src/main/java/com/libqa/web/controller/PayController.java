@@ -16,7 +16,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @RestController
 public class PayController {
 
-    @RequestMapping(value = "/sal", method = GET)
+    @RequestMapping(value = "/pay", method = GET)
     public ModelAndView main(ModelAndView mav) {
 
         mav.setViewName("pay/main");
