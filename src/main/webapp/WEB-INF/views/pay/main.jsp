@@ -3,7 +3,7 @@
 {{# partial "content" }}
 
 <center>
-<iframe dth="1300" height="900" src="http://ekkor.ze.am/pay/home/main.do" name="test" id="test" frameborder="0" scrolling="auto" align="middle">
+<iframe dth="1300" height="900" src="/pay/home/payMain.do?email={{userEmail}}"" name="test" id="test" frameborder="0" scrolling="auto" align="middle">
 이 브라우저는 iframe을 지원하지 않습니다.</iframe>
 </center>
 

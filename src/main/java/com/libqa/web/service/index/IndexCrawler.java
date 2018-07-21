@@ -132,6 +132,7 @@ public class IndexCrawler {
     private List<IndexWiki> buildWikies() {
         List<IndexWiki> result = Lists.newArrayList();
         List<Wiki> wikies = wikiService.searchRecentlyWikiesByPageSize(INDEX_WIKI_SIZE);
+        //List<Wiki> wikies = wikiService.searchRecentlyWikiesByPageSize_test(INDEX_WIKI_SIZE);
         for (Wiki each : wikies) {
             IndexWiki indexWiki = IndexWiki.of();
             indexWiki.setWikiId(each.getWikiId());

@@ -60,8 +60,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anonymous()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/user/**", "/space", "/space/**", "/feed/**",
-                        "/qa", "/qa/**", "/hqa/save", "/wiki/**", "/common/**").permitAll()
+                .antMatchers("/").authenticated()
+                .antMatchers("/index", "/user/**", "/space", "/space/**", "/feed/**",
+                        "/qa", "/qa/**", "/hqa/save", "/wiki/**", "/common/**").authenticated()
+                /*.antMatchers("/", "/index", "/user/**", "/space", "/space/**", "/feed/**",
+                        "/qa", "/qa/**", "/hqa/save", "/wiki/**", "/common/**").permitAll()*/
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
                 .and()
                 .formLogin()

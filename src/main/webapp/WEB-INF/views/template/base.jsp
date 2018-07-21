@@ -28,7 +28,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="http://ekkor.ze.am/pay/home/main.do" target="_blank">Pay</a></li>
+            <li><a href="/sal" id="pay">Pay</a></li>
             {{/if}}
             {{#if userRole}}
             {{#compareTo userRole 'ADMIN'}}
@@ -153,7 +153,7 @@
     $(document).ready(function () {
         $("#loginBtn").click(function() {
             submitLogin();
-            payLogin();
+            //payLogin();
         });
 
         $('#userPass').keypress(function(e) {
@@ -172,19 +172,22 @@
     });
 
     function logOut() {
-        $.post("http://ekkor.ze.am/logoutUser",
+        var origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+        //alert(origin);
+        $.post("/logoutUser",
             function () {
-                location.href = getContextPath()+"/";
+                //location.href = origin+"/index";
+                location.href = "/index";
             }
         );
-        $.get("http://ekkor.ze.am/pay/user/logout.do");
+        $.get("/pay/user/logout.do");
     }
 
     function payLogin() {
         userEmail = $("#userEmail").val();
         userPass = $("#userPass").val();
         $.ajax({
-            url : 'http://ekkor.ze.am/pay/home/payLogin.do',
+            url : '/pay/home/payLogin.do',
             data : {email:userEmail,passwd:userPass},
             type : 'post',
             success:function(response){

@@ -371,6 +371,17 @@ public class WikiServiceImpl implements WikiService {
         return wikiRepository.findAllByIsDeletedFalse(pageRequest);
     }
 
+    /*@Override
+    public List<Wiki> searchRecentlyWikiesByPageSize_test(Integer pageSize) {
+        final Integer startIndex = 0;
+        final Sort sort = PageUtil.sortId("DESC", "wikiId");
+        PageRequest pageRequest = PageUtil.sortPageable(startIndex, pageSize, sort);
+        System.out.println("================== wiki service Imp =================================");
+        System.out.println("pageRequest : " + pageRequest);
+        System.out.println("result : " + wikiRepository.findAllByIsDeletedFalse_test(pageRequest));
+        return wikiRepository.findAllByIsDeletedFalse(pageRequest);
+    }*/
+
 
     @Override
     public Integer maxOrderIdx(Integer parentsId, Integer depthIdx) {

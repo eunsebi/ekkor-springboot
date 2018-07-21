@@ -1,29 +1,25 @@
 package com.libqa.web.controller;
 
-import com.libqa.web.service.index.IndexCrawler;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.libqa.web.service.index.IndexCrawler;
+
+import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 @Controller
-public class IndexController {
+public class AdminController {
     @Autowired
     private IndexCrawler indexCrawler;
 
-    @RequestMapping({"/"})
+    @RequestMapping({"/admin"})
     public ModelAndView index(ModelAndView mav) {
         //mav.addObject("displayIndex", indexCrawler.crawl());
-        mav.setViewName("index");
+        mav.setViewName("/admin/main");
         return mav;
     }
 
-    @RequestMapping({"/index"})
-    public ModelAndView home(ModelAndView mav) {
-        mav.addObject("displayIndex", indexCrawler.crawl());
-        mav.setViewName("home");
-        return mav;
-    }
 }

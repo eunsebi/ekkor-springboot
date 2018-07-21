@@ -45,6 +45,8 @@ public interface WikiService {
 
     List<Wiki> searchRecentlyWikiesByPageSize(Integer pageSize);
 
+    //List<Wiki> searchRecentlyWikiesByPageSize_test(Integer pageSize);
+
     Integer maxOrderIdx( Integer parentsId, Integer depthIdx );
 
     List<Wiki> findByGroupIdxAndOrderIdxGreaterThanAndIsDeleted( Integer groupIdx, Integer maxOrderIdx );
@@ -54,4 +56,5 @@ public interface WikiService {
     List<Wiki> findBySpaceIdAndSort(Integer spaceId);
 
     Page<Wiki> findPagingByIsDeleted(Pageable pageable,  boolean isDeleted);
+
 }

@@ -37,6 +37,10 @@ public interface WikiRepository extends JpaRepository<Wiki, Integer> {
 
     List<Wiki> findAllByIsDeletedFalse(Pageable pageable);
 
+    /*@Query(value = "SELECT w.* FROM wiki w " +
+            "WHERE w.is_deleted = 0 ", nativeQuery = true)
+    List<Wiki> findAllByIsDeletedFalse_test(Pageable pageable);*/
+
     List<Wiki> findByParentsIdAndDepthIdxAndIsDeleted(Integer parentsId, Integer depthIdx, boolean isDeleted, Pageable pageable);
 
     List<Wiki> findByGroupIdxAndOrderIdxGreaterThanEqualAndIsDeleted(Integer groupIdx, Integer orderIdx, boolean isDeleted);
