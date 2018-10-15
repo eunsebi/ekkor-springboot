@@ -28,7 +28,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="/pay" id="pay">Pay</a></li>
+            <li><a href="/sal" id="pay">Pay</a></li>
             {{/if}}
             {{#if userRole}}
             {{#compareTo userRole 'ADMIN'}}

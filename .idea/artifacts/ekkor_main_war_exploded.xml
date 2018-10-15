@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="ekkor_main:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/ekkor_main_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/build/artifacts/ekkor_main_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

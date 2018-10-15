@@ -50,7 +50,7 @@
                     <h3 class="page-header"><i class="glyphicon glyphicon-book"></i> Wiki</h3>
                     {{#each wikies}}
                         <div class="panel panel-default">
-                            <div class="panel-heading"><strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
+                            <div class="panel-heading">(Space ID : {{spaceId}}) <strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
                             <div class="panel-body">
                                 <a href="/wiki/{{wikiId}}">{{{ abbreviate (htmlDelete description) 70}}}</a>
                             </div>

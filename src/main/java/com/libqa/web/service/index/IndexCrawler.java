@@ -138,6 +138,7 @@ public class IndexCrawler {
             indexWiki.setWikiId(each.getWikiId());
             indexWiki.setTitle(each.getTitle());
             indexWiki.setDescription(StringUtil.abbreviateString(each.getContents()));
+            indexWiki.setSpaceId(each.getSpaceId());
             result.add(indexWiki);
         }
         return result;

@@ -240,7 +240,7 @@
                         <div class="my-my-qna-item-body">
                             <div class="media-heading">
                                 {{formatDate insertDate "yyyy.MM.dd"}}
-                                <span class="my-qna-writer">작성자 &nbsp;&nbsp;&nbsp;{{this.insertUserNick}}</span>
+                                <span class="my-qna-writer">작성자 &nbsp;&nbsp;&nbsp;{{this.userNick}}</span>
                                 <!--<strong><span class="pull-right">form facebook</span></strong>-->
                             </div>
                             {{{this.contents }}}

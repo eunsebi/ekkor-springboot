@@ -12,4 +12,5 @@ public class IndexWiki {
     private Integer wikiId;
     private String title;
     private String description;
+    private Integer spaceId;
 }
