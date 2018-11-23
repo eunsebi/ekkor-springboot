@@ -22,7 +22,6 @@ target
 *.MF
 bin/
 tmp/
-gradle/
 out/
 classes/
 
