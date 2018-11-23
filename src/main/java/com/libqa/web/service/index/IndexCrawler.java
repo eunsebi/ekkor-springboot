@@ -1,6 +1,8 @@
 package com.libqa.web.service.index;
 
 import com.google.common.collect.Lists;
+import com.libqa.application.util.LibqaConstant;
+import com.libqa.application.util.LoggedUserManager;
 import com.libqa.application.util.StringUtil;
 import com.libqa.config.CacheConfiguration;
 import com.libqa.web.domain.*;
@@ -13,10 +15,12 @@ import com.libqa.web.service.user.UserService;
 import com.libqa.web.service.wiki.WikiService;
 import com.libqa.web.view.feed.DisplayDate;
 import com.libqa.web.view.index.*;
+import com.libqa.web.view.space.SpaceWiki;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
@@ -45,6 +49,9 @@ public class IndexCrawler {
     @Autowired
     private FeedThreadService feedThreadService;
 
+    @Autowired
+    private LoggedUserManager loggedUserManager;
+
     /**
      * 인덱스에 노출할 정보를 crawl 하여 {@link DisplayIndex}에 담아 반환한다.
      *
@@ -58,6 +65,7 @@ public class IndexCrawler {
         displayIndex.setSpaces(buildSpaces());
         displayIndex.setWikies(buildWikies());
         displayIndex.setFeeds(buildFeeds());
+        displayIndex.setSpaceWikis(buildSpaceWiki());
         return displayIndex;
     }
 
@@ -118,13 +126,48 @@ public class IndexCrawler {
 
         final boolean isDeleted = false;
         final int startIdx = 0;
+        int spaceid = 7;
         List<Space> spaces = spaceService.findAllByCondition(isDeleted, startIdx, INDEX_SPACE_SIZE);
+
         for (Space each : spaces) {
             IndexSpace space = IndexSpace.of();
             space.setSpaceId(each.getSpaceId());
             space.setTitle(each.getTitle());
             space.setDescription(StringUtil.abbreviateString(each.getDescription()));
             result.add(space);
+        }
+        return result;
+    }
+
+    private List<IndexSpaceWiki> buildSpaceWiki() {
+        // 메인화면 등급별 Space Wiki
+        Integer spaceId;
+        User user = loggedUserManager.getUser();
+
+        System.out.println("user Role : " + user.getRole());
+        if ("ADMIN".equals(user.getRole().toString())) {
+            System.out.println("admin이다~~~~~~~~~~~~~~~~~");
+            spaceId = 7;
+        } else {
+            spaceId = 1;
+        }
+        System.out.println("4444444444444444444444444444444444444444444");
+        System.out.println("space Id : " + spaceId);
+        List<IndexSpaceWiki> result = new ArrayList<>();
+        List<Wiki> updatedWikis = wikiService.findSortAndModifiedBySpaceId(spaceId, 0, LibqaConstant.SPACE_WIKI_SIZE);
+        for (Wiki wiki : updatedWikis) {
+            /*User user = userService.findByUserId(wiki.getUpdateUserId());
+            SpaceWiki spaceWiki = new SpaceWiki();
+
+            spaceWiki.setUser(user);
+            spaceWiki.setWiki(wiki);
+            spaceWiki.setReplyCount(wiki.getReplyCount());
+            spaceWikis.add(spaceWiki);*/
+            IndexSpaceWiki indexSpaceWiki = IndexSpaceWiki.of();
+            indexSpaceWiki.setTitle(wiki.getTitle());
+            indexSpaceWiki.setWikiId(wiki.getWikiId());
+            indexSpaceWiki.setDescription(wiki.getContents());
+            result.add(indexSpaceWiki);
         }
         return result;
     }

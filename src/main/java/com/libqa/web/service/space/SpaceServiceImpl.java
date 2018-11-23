@@ -62,7 +62,6 @@ public class SpaceServiceImpl implements SpaceService {
         return this.findAllByCondition(isDeleted, null, null);
     }
 
-
     @Override
     public List<Space> findAllByCondition(boolean isDeleted, Integer startNum, Integer pageSize) {
         if (startNum == null) {

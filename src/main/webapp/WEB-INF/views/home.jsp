@@ -46,7 +46,20 @@
                     </div>
                     {{/each}}
                </div>
-               <div class="col-sm-6">
+                <!-- 테스트 -->
+                <div class="col-sm-6">
+                    <h3 class="page-header"><i class="glyphicon glyphicon-book"></i> Space Wiki</h3>
+                    {{#each spaceWikis}}
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>{{{abbreviate (htmlDelete title) 30}}}</strong></div>
+                        <div class="panel-body">
+                            <a href="/wiki/{{wikiId}}">{{{ abbreviate (htmlDelete description) 70}}}</a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <!-- end -->
+               <!--<div class="col-sm-6">
                     <h3 class="page-header"><i class="glyphicon glyphicon-book"></i> Wiki</h3>
                     {{#each wikies}}
                         <div class="panel panel-default">
@@ -56,7 +69,7 @@
                             </div>
                         </div>
                     {{/each}}
-               </div>
+               </div>-->
                <div class="col-sm-12">
                     <div class="index-thread-box first">
                         <h3 class="page-header"><i class="glyphicon glyphicon-question-sign"></i> Q&amp;A</h3>

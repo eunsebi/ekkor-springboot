@@ -82,4 +82,5 @@ public interface SpaceService {
     List<SpaceMain> convertSpaceMain(List<Space> spaces);
 
     SpaceWikiList findWikiPageBySort(boolean isDeleted, Integer startIdx, Integer endIdx, String sortCondition);
+
 }

@@ -15,4 +15,5 @@ public class DisplayIndex {
     private List<IndexWiki> wikies;
     private List<IndexSpace> spaces;
     private List<IndexFeed> feeds;
+    private List<IndexSpaceWiki> spaceWikis;
 }

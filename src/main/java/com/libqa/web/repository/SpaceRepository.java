@@ -26,4 +26,5 @@ public interface SpaceRepository extends JpaRepository<Space, Integer> {
             "   AND (s.title LIKE CONCAT('%',:searchValue,'%') OR s.description_markup LIKE CONCAT('%',:searchValue,'%') ) " +
             "ORDER BY s.space_id DESC", nativeQuery = true)
     List<Space> findAllBySearchValue(@Param("searchValue") String searchValue);
+
 }
